@@ -3,6 +3,21 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
+import {MatCardModule} from '@angular/material/card';
+import {MatFormFieldModule} from '@angular/material/form-field';
+
+
+import {MatSelectModule} from '@angular/material/select';
+
+
+import {MatInputModule} from '@angular/material/input';
+
+
+
+
+
+
+
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
@@ -26,6 +41,12 @@ import { StudentsComponent } from './modules/students/students.component';
     BrowserAnimationsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    MatCardModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatInputModule
+
+
   ],
   providers: [],
   bootstrap: [AppComponent]

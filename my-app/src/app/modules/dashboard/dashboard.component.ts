@@ -11,6 +11,12 @@ import { Subject } from 'rxjs';
 })
 export class DashboardComponent implements OnDestroy {
 
+
+  Courses = new FormControl();
+
+  CourseList: string[] = ['DSA', 'Python', 'Electronics', 'Software_Design', 'Chemistry', 'Statics'];
+
+
   constructor(private serviceService: ServiceService) {}
 
   title = 'Admin Portal';
