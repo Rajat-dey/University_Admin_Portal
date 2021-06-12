@@ -1,0 +1,26 @@
+.nav-fixed-top{
+    position: relative;
+}
+.navbar{
+    padding: 5px 0px;
+}
+.navbar-inverse{
+    border: 0;
+    margin-top: 0;
+    height: 60px;
+    min-height: 60px;
+    z-index: 1;
+    background: #434f5b;
+}
+.titleDiv{
+    align-self: self-start;
+    margin-left: 10vh;
+    margin-top: 16px;
+    display: inline-block;
+}
+.titleDiv label{
+    margin-left: 15px;
+    font-size: 21px;
+    color: white;
+    line-height: 0.5;
+}
