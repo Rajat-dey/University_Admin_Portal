@@ -4,6 +4,7 @@ import { ServiceService } from '../../core/service.service';
 import { takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
 
+
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -11,20 +12,19 @@ import { Subject } from 'rxjs';
 })
 export class DashboardComponent implements OnDestroy {
 
-
-  Courses = new FormControl();
-
   CourseList: string[] = ['DSA', 'Python', 'Electronics', 'Software_Design', 'Chemistry', 'Statics'];
-
 
   constructor(private serviceService: ServiceService) {}
 
   title = 'Admin Portal';
 
-  userForm = new FormGroup({
-    firstName: new FormControl('', Validators.required),
-    lastName: new FormControl('',  Validators.required),
-    email: new FormControl('', Validators.required)
+  StudentForm = new FormGroup({
+    FullName: new FormControl('', Validators.required),
+    Contact: new FormControl('', Validators.required),
+    AcademicYear: new FormControl('',  Validators.required),
+    Semester: new FormControl('', Validators.required),
+    Subjects: new FormControl('', Validators.required)
+
   });
 
   users: any[] = [];
@@ -33,11 +33,11 @@ export class DashboardComponent implements OnDestroy {
   destroy$: Subject<boolean> = new Subject<boolean>();
 
   onSubmit() {
-    this.serviceService.addstudent(this.userForm.value).pipe(takeUntil(this.destroy$)).subscribe(data => {
+    this.serviceService.addstudent(this.StudentForm.value).pipe(takeUntil(this.destroy$)).subscribe(data => {
       console.log('message::::', data);
       this.userCount = this.userCount + 1;
       console.log(this.userCount);
-      this.userForm.reset();
+      this.StudentForm.reset();
     });
   }
 
