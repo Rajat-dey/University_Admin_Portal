@@ -1,4 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewChild  } from '@angular/core';
+import {MatPaginator} from '@angular/material/paginator';
+import {MatTableDataSource} from '@angular/material/table';
 
 @Component({
   selector: 'app-students',
@@ -7,11 +9,34 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class StudentsComponent implements OnInit {
 
+  CourseList: string[] = ['DSA', 'Python', 'Electronics', 'Software_Design', 'Chemistry', 'Statics'];
+
   constructor() { }
 
- 
   @Input() users: any;
 
-  ngOnInit(): void {
-  }
+
+// studentsData : { AcademicYear: string; Contact: number; FullName: string;  Semester: string;   Subjects: string[]; }[];
+
+ 
+displayedColumns: string[] = [ 'FullName', 'Contact', 'AcademicYear', "Semester","Courses"];
+
+
+dataSource = new MatTableDataSource();
+
+
+
+  @ViewChild(MatPaginator, { static: true })
+  paginator!: MatPaginator;
+
+ngOnInit() {
+
+  this.dataSource =this.users;
+  this.dataSource.paginator = this.paginator;
+ 
+  console.log(this.dataSource.paginator);
+}
+
+
+
 }

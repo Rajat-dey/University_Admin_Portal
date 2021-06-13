@@ -11,7 +11,9 @@ import {MatSelectModule} from '@angular/material/select';
 
 
 import {MatInputModule} from '@angular/material/input';
-
+import {  MatTableModule } from '@angular/material/table';
+import {  MatPaginatorModule } from '@angular/material/paginator';
+import {  MatButtonModule } from '@angular/material/button'
 
 
 
@@ -44,7 +46,10 @@ import { StudentsComponent } from './modules/students/students.component';
     MatCardModule,
     MatFormFieldModule,
     MatSelectModule,
-    MatInputModule
+    MatInputModule,
+    MatPaginatorModule,
+    MatTableModule,
+    MatButtonModule
 
 
   ],
