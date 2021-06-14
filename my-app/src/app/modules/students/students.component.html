@@ -1,93 +1,37 @@
  
     <table mat-table [dataSource]="dataSource">
 
-      <ng-container matColumnDef="index">
-        <th mat-header-cell *matHeaderCellDef> User ID </th>
-        <td mat-cell *matCellDef="let index = index"> {{index}} </td>
+
+      <ng-container [matColumnDef]="col" *ngFor="let col of displayedColumns">
+        <th mat-header-cell *matHeaderCellDef>
+          <span *ngIf="col !== 'edit'">
+            {{col}}
+          </span>
+        </th>
+        <td mat-cell *matCellDef="let element">
+          <div *ngIf="!element.isEdit">
+            <div class="btn-edit" *ngIf="col === 'edit'; spanHeader" >
+              <button (click)="element.isEdit = !element.isEdit">Edit</button>
+            </div>
+            
+            <span #spanHeader>
+              {{element[col]}}
+            </span>
+          </div>
+          <div [ngSwitch]="dataSchema[col]" *ngIf="element.isEdit">
+                <div class="btn-edit" *ngSwitchCase="'edit'">
+                  <button (click)="element.isEdit = !element.isEdit">Done</button>
+                </div>
+                <mat-form-field *ngSwitchDefault>
+                  <mat-label>{{col}}</mat-label>
+                  <input [type]="dataSchema[col]" matInput [(ngModel)]="element[col]">
+                </mat-form-field>
+            </div>
+        </td>
       </ng-container>
-
-      <ng-container matColumnDef="FullName">
-        <th mat-header-cell *matHeaderCellDef>Full Name</th>
-        <td mat-cell *matCellDef="let element"> {{element.FullName}} </td>
-      </ng-container>
-  
-      
-      <ng-container matColumnDef="Contact">
-        <th mat-header-cell *matHeaderCellDef> Contact Number </th>
-        <td mat-cell *matCellDef="let element"> {{element.Contact}} </td>
-      </ng-container>
-  
-     
-      <ng-container matColumnDef="AcademicYear">
-        <th mat-header-cell *matHeaderCellDef> Academic Year </th>
-        <td mat-cell *matCellDef="let element"> {{element.AcademicYear}} </td>
-      </ng-container>
-  
-     
-      <ng-container matColumnDef="Semester">
-        <th mat-header-cell *matHeaderCellDef> Semester </th>
-        <td mat-cell *matCellDef="let element"> {{element.Semester}} </td>
-      </ng-container>
-
-      <ng-container matColumnDef="Courses">
-        <th mat-header-cell *matHeaderCellDef> Courses </th>
-        <td mat-cell *matCellDef="let element"> {{element.Subjects}} </td>
-      </ng-container>
-
-
-
-      <!-- <ng-container matColumnDef="subjectsAddition">
-        <th mat-header-cell *matHeaderCellDef> subjects </th>
-        <td mat-cell *matCellDef="let element"> 
-
-
-
-          <mat-form-field>
-            <mat-label>Courses</mat-label>
-            <mat-select formControlName="Subjects"  multiple>
-              <mat-option *ngFor="let course of CourseList" [value]="course">{{course}}</mat-option>
-            </mat-select>
-          </mat-form-field>
-
-
-
-
-      </ng-container> -->
-
-
-
-
-
-      
-
   
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
   
     <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  

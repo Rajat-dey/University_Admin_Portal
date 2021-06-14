@@ -13,11 +13,9 @@ export class StudentsComponent implements OnInit {
   CourseList: string[] = ['DSA', 'Python', 'Electronics', 'Software_Design', 'Chemistry', 'Statics'];
   constructor() { }
  
-displayedColumns: string[] = [ 'index', 'FullName', 'Contact', 'AcademicYear', "Semester","Courses"];
-dataSource = new MatTableDataSource();
-
-  // @ViewChild(MatPaginator, { static: false })
-  // paginator: MatPaginator;
+ displayedColumns: string[] = ['FullName', 'Contact', 'AcademicYear', "Semester","Subjects", 'edit'];
+ dataSource = new MatTableDataSource();
+ dataSchema = USER_SCHEMA;
 
 
 ngOnInit() {
@@ -33,4 +31,13 @@ private paginator: MatPaginator;
 setDataSourceAttributes() {
   this.dataSource.paginator = this.paginator;
 }
+}
+
+const USER_SCHEMA : { [unit: string]: string } = {
+  "FullName": "text",
+  "Contact": "number",
+  "AcademicYear": "text",
+  "Semester": "text",
+  "Courses": "text",
+  "edit": "edit"
 }

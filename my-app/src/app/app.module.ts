@@ -15,6 +15,7 @@ import {  MatTableModule } from '@angular/material/table';
 import {  MatPaginatorModule } from '@angular/material/paginator';
 import {  MatButtonModule } from '@angular/material/button'
 
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -49,7 +50,8 @@ import { StudentsComponent } from './modules/students/students.component';
     MatInputModule,
     MatPaginatorModule,
     MatTableModule,
-    MatButtonModule
+    MatButtonModule,
+    FormsModule
 
 
   ],
