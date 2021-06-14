@@ -13,7 +13,7 @@ export class StudentsComponent implements OnInit {
   CourseList: string[] = ['DSA', 'Python', 'Electronics', 'Software_Design', 'Chemistry', 'Statics'];
   constructor() { }
  
-displayedColumns: string[] = [ 'FullName', 'Contact', 'AcademicYear', "Semester","Courses"];
+displayedColumns: string[] = [ 'index', 'FullName', 'Contact', 'AcademicYear', "Semester","Courses"];
 dataSource = new MatTableDataSource();
 
   // @ViewChild(MatPaginator, { static: false })
