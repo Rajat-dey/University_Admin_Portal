@@ -1,12 +1,21 @@
 .display-board {
     width: 100%;
-    background-color: rgb(193, 236, 112);
+    background-color: #472ECD;
     padding: 5%;
+    height: 100%;
   }
+  h2{ color: #ffffff;}
+  h5{ color: hsla(0, 0%, 100%, 0.863);}
   
   .number {
-    color: red;
+    margin-top: 85px;
+    color: #F44C57;
     font-size: 75px;
     text-align: center;
   }
   
+  button{
+    margin-top: 50px;
+    background-color: #9275D7;
+    color: azure;
+  }

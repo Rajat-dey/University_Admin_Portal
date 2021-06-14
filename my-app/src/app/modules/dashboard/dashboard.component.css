@@ -1,38 +1,3 @@
-
-
-
-
-.example-additional-selection {
-    opacity: 0.75;
-    font-size: 0.75em;
-  }
-
-
-
-
-
-
-
-
-
-
-
-.mat-card {    
-    text-align: -webkit-center;    
-}    
-    
-.demo-toolbar {    
-    display: flex;    
-    align-items: center;    
-    width: 100%;    
-}    
-    
-.demo-form {    
-    min-width: 150px;    
-    max-width: 500px;    
-    width: 100%;    
-}    
-    
 .demo-full-width {    
     width: 100%;    
 }    
@@ -43,19 +8,12 @@ body {
 }    
     
 mat-card {    
+    text-align: -webkit-center;
     max-width: 80%;    
-    margin: 2em auto;    
-    text-align: center;    
+    margin: auto;    
+    text-align: center;
+    padding: 0;    
 }    
-    
- 
-    
-/* .done {    
-    position: fixed;    
-    bottom: 20px;    
-    right: 20px;    
-    color: white;    
-}     */
     
 .content-center {    
     text-align: -webkit-center;    
@@ -63,63 +21,24 @@ mat-card {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.col-md-4{
+    padding-left: 0;
+    padding-right: 0px;
+}
 
 .FormContainer{
     margin: 20px;
 }
-
 .FormContainer h2{
     text-align: center;
-    color: blue;
+    color: #0E054D;
     font-size: 2em;
     font-weight: bold;
-
 }
-
 .FormContainer h5{
     text-align: center;
-    color: gray;
+    color: #A4A2BC;
     font-size: 1em;
-    font-weight: lighter;
     margin-bottom: 30px;
     
 }
