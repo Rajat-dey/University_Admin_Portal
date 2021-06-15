@@ -1,18 +1,18 @@
-<div class="mat-elevation-z8" id ="tableElevation">
-    <table mat-table [dataSource]="dataSource">
+<div class="example-container mat-elevation-z8" id ="tableElevation">
+    <mat-table [dataSource]="dataSource">
 
       <ng-container [matColumnDef]="col" *ngFor="let col of displayedColumns">
-        <th mat-header-cell *matHeaderCellDef>
+        <mat-header-cell *matHeaderCellDef>
           <span *ngIf="col !== 'edit'">
             {{col}}
           </span>
-        </th>
-        <td mat-cell *matCellDef="let element">
+        </mat-header-cell>
+        <mat-cell *matCellDef="let element">
           <div *ngIf="!element.isEdit">
             <div class="btn-edit" *ngIf="col === 'edit'; spanHeader" >
               <button mat-raised-button color="warn" (click)="element.isEdit = !element.isEdit">Edit</button>
             </div>
-            
+            <span class="mobile-label" *ngIf="col !== 'edit'">{{col}}:</span>
             <span #spanHeader>
               {{element[col]}}
             </span>
@@ -26,12 +26,12 @@
                   <input [type]="dataSchema[col]" matInput [(ngModel)]="element[col]">
                 </mat-form-field>
             </div>
-        </td>
+        </mat-cell>
       </ng-container>
   
-      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-    </table>
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
   
     <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
 
