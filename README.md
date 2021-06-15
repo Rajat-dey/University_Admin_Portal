@@ -5,8 +5,7 @@ A small project on University Admin Portal, where admin has the rights to add st
 
 The whole project is divided into two parts --> 
 
-Nodejs for development of API as a part of Backend/Server 
-Angular for the development of Fronted/UI Part
+Nodejs for development of API as a part of Backend/Server and Angular for the development of Fronted/UI Part
 
 ### Key Features:
 1) Admin can input the details of the student and add it.
@@ -18,9 +17,9 @@ Angular for the development of Fronted/UI Part
 7) Whole application is mobile responsive.
 
 
-### To the Application directly:
+### To run the Application directly:
 
-1) Need two terminal open parallely.
+1) Need two terminal to open in Parallel.
 2) Open first terminal under main structure of the application, where server.js file is present and run the below two commands respectively one by one:
 ```bash
         npm install
@@ -50,8 +49,6 @@ To run the Server :
 2) Type and enter - npm install --> To download the node module
 3) Type and enter - npm run dev --> To run the server of the nodejs backend
 
-
-
 b) Frontend --> Angular Framework is used to develop the UI part of the project, where multiple module are used to develop with Material Design to use in both Desktop and Mobile devices.
 
 CodeBase : my-app project is created with cli and contains all the file and folders
@@ -62,11 +59,23 @@ To run the client:
 2) Type and enter - npm install --> To download the node module
 3) Type and enter - ng serve --> To run the app on port 4200 in localhost.
 
-
-
 You can notice that there are two node modules folder in the project such the root module folder is the parts of the Angular APP that contains all the dependency of the Application. And the node module folder which is under parent folder is the part of the NodeJS Service layer.
 
 
 
+*Snapshot of the Developed Application :*
+
+Snapshot 1 :
+
+![](Admin_Panel.JPG)
 
 
+
+Snapshot 2: 
+
+![](Admin_Sanpshot.JPG)
+
+
+
+
+**Note : Multiple bugs may be present in the application, which will be solved in future updates.**
