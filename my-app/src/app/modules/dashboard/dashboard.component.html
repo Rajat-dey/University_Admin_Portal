@@ -17,51 +17,47 @@
             </app-display-board>
           </div>
 
-          <div class="col-md-7 mrgnbtm">
-
+          <div class="col-md-8" id='StudentData'>
             <form [formGroup]="StudentForm" (ngSubmit)="onSubmit()">    
-            <table>    
-                <tr>    
-                    <td>    
-                        <mat-form-field class="demo-full-width">    
-                            <input matInput placeholder="Full Name"  formControlName="FullName">    
-                        </mat-form-field>    
-                    </td>    
-                    <td>    
-                        <mat-form-field class="demo-full-width">    
-                            <input matInput type="number" placeholder="Contact Number" formControlName="Contact">    
-                        </mat-form-field>    
-                    </td>    
-                </tr>        
-                <tr>    
-                    <td>    
-                        <mat-form-field class="demo-full-width">    
-                            <input matInput placeholder="Academic Year" formControlName="AcademicYear">    
-                        </mat-form-field>    
-                    </td>
-                    <td>    
-                      <mat-form-field class="demo-full-width">    
-                          <input matInput placeholder="Semester" formControlName="Semester">    
-                      </mat-form-field>    
-                  </td>     
-                </tr>       
-               
-                
-                <mat-form-field>
-                  <mat-label>Courses</mat-label>
-                  <mat-select formControlName="Subjects"  multiple>
-                    <mat-option *ngFor="let course of CourseList" [value]="course">{{course}}</mat-option>
-                  </mat-select>
-                </mat-form-field>
-                <tr>    
-                  <td colspan="2" class="content-center">    
-                    <button type="submit" [disabled]="!StudentForm.valid" class="btn btn-danger">Create</button>    
-                  </td>    
-              </tr> 
-           
-            </table>    
-        </form>  
-
+                <table>    
+                    <tr>    
+                        <td>    
+                            <mat-form-field class="demo-full-width">    
+                                <input matInput placeholder="Full Name"  formControlName="FullName">    
+                            </mat-form-field>    
+                        </td>    
+                        <td>    
+                            <mat-form-field class="demo-full-width">    
+                                <input matInput type="number" placeholder="Contact Number" formControlName="Contact">    
+                            </mat-form-field>    
+                        </td>    
+                    </tr>        
+                    <tr>    
+                        <td>    
+                            <mat-form-field class="demo-full-width">    
+                                <input matInput placeholder="Academic Year" formControlName="AcademicYear">    
+                            </mat-form-field>    
+                        </td>
+                        <td>    
+                          <mat-form-field class="demo-full-width">    
+                              <input matInput placeholder="Semester" formControlName="Semester">    
+                          </mat-form-field>    
+                      </td>     
+                    </tr>       
+                    <mat-form-field>
+                      <mat-label>Courses</mat-label>
+                      <mat-select formControlName="Subjects"  multiple>
+                        <mat-option *ngFor="let course of CourseList" [value]="course">{{course}}</mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                    <tr>    
+                      <td colspan="2" class="content-center">    
+                        <button type="submit"  id="SubmitFormBtn" [disabled]="!StudentForm.valid" class="btn btn-danger">Submit</button>    
+                      </td>    
+                    </tr> 
+              
+                </table>    
+            </form>  
           </div>  
 </div>
 </div> 
