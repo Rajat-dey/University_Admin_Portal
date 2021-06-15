@@ -1,6 +1,6 @@
 <div class="example-container mat-elevation-z8" id ="tableElevation">
+  <!-- Dynamic table is created to display header and rows of the table -->
     <mat-table [dataSource]="dataSource">
-
       <ng-container [matColumnDef]="col" *ngFor="let col of displayedColumns">
         <mat-header-cell *matHeaderCellDef>
           <span *ngIf="col !== 'edit'">
@@ -12,11 +12,13 @@
             <div class="btn-edit" *ngIf="col === 'edit'; spanHeader" >
               <button mat-raised-button color="warn" (click)="element.isEdit = !element.isEdit">Edit</button>
             </div>
-            <span class="mobile-label" *ngIf="col !== 'edit'">{{col}}:</span>
+            <!-- This 16th line span is used for mobile display where the header shows in bold font -->
+            <span class="mobile-label" *ngIf="col !== 'edit'">{{col}}:</span>  
             <span #spanHeader>
               {{element[col]}}
             </span>
           </div>
+          <!-- Switch is used to switch between input and readonly rows with the button interchangeable feature -->
           <div [ngSwitch]="dataSchema[col]" *ngIf="element.isEdit">
                 <div class="btn-edit" *ngSwitchCase="'edit'">
                   <button mat-raised-button color="accent" (click)="element.isEdit = !element.isEdit">Done</button>
@@ -28,11 +30,10 @@
             </div>
         </mat-cell>
       </ng-container>
-  
       <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
       <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
     </mat-table>
-  
+  <!-- For Pagination -->
     <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
 
 </div>

@@ -9,7 +9,7 @@ export class DisplayBoardComponent implements OnInit {
 
   constructor() { }
 
-  @Input() userCount = 0;
+  @Input() userCount = 0;   //Component data sharing takes place from here to store the student count
   @Output() getUsersEvent = new EventEmitter();
 
   ngOnInit(): void {

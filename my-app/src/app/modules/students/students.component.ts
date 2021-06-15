@@ -10,21 +10,21 @@ import {MatTableDataSource} from '@angular/material/table';
 export class StudentsComponent implements OnInit {
   @Input() users: any;
 
-  CourseList: string[] = ['DSA', 'Python', 'Electronics', 'Software_Design', 'Chemistry', 'Statics'];
+//  CourseList: string[] = ['DSA', 'Python', 'Electronics', 'Software_Design', 'Chemistry', 'Statics'];
   constructor() { }
  
- displayedColumns: string[] = ['FullName', 'Contact', 'AcademicYear', "Semester","Subjects", 'edit'];
+ displayedColumns: string[] = ['FullName', 'Contact', 'AcademicYear', "Semester","Subjects", 'edit'];   // To display the column list
  dataSource = new MatTableDataSource();
  dataSchema = USER_SCHEMA;
 
 
 ngOnInit() {
-  this.dataSource = new MatTableDataSource(this.users);
+  this.dataSource = new MatTableDataSource(this.users);  // sending the data through MatTableDataSource as the data are dynamic and get throughs api
 }
 
 private paginator: MatPaginator;
 
-@ViewChild(MatPaginator) set matPaginator(mp: MatPaginator) {
+@ViewChild(MatPaginator) set matPaginator(mp: MatPaginator) {   // Important Part!! --> MatPaginator is need to set to get paginator working on dynamic data set
   this.paginator = mp;
   this.setDataSourceAttributes();
 }
@@ -32,7 +32,7 @@ setDataSourceAttributes() {
   this.dataSource.paginator = this.paginator;
 }
 }
-
+// Declaring the schema for the user input in the table 
 const USER_SCHEMA : { [unit: string]: string } = {
   "FullName": "text",
   "Contact": "number",

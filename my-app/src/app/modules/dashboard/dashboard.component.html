@@ -3,12 +3,16 @@
   <h2>Provide Student Details</h2>
   <h5>All the details are required to submit the Form!!</h5>
 
+
+  <!-- Main card that contains the form -->
+
   <mat-card>
     <!-- <mat-card-title>Student Details</mat-card-title>     -->
     <mat-card-content>
       <div class="container">
         <div class="row">
           <div class="col-md-4 mrgnbtm">
+             <!-- To store the count of the Student added at a time -->
             <app-display-board [userCount]="userCount" (getUsersEvent)="getAllUsers()">
             </app-display-board>
           </div>
@@ -59,6 +63,7 @@
   </mat-card>
 </div>
 
+<!-- Carries all the data as part of component data sharing to display in the dashboard -- Dynamic form -->
 <div class="mrgnbtm">
   <app-students *ngIf="users.length !== 0" [users]="users"></app-students>
 </div>
