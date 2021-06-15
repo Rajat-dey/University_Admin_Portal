@@ -1,74 +1,64 @@
- 
-<div class = "FormContainer">
+<div class="FormContainer">
 
   <h2>Provide Student Details</h2>
   <h5>All the details are required to submit the Form!!</h5>
 
-  <mat-card>   
+  <mat-card>
     <!-- <mat-card-title>Student Details</mat-card-title>     -->
-    <mat-card-content>    
+    <mat-card-content>
       <div class="container">
         <div class="row">
           <div class="col-md-4 mrgnbtm">
-            <app-display-board
-             [userCount]="userCount"
-             (getUsersEvent)="getAllUsers()"
-            >
+            <app-display-board [userCount]="userCount" (getUsersEvent)="getAllUsers()">
             </app-display-board>
           </div>
 
           <div class="col-md-8" id='StudentData'>
-            <form [formGroup]="StudentForm" (ngSubmit)="onSubmit()">    
-                <table>    
-                    <tr>    
-                        <td>    
-                            <mat-form-field class="demo-full-width">    
-                                <input matInput placeholder="Full Name"  formControlName="FullName">    
-                            </mat-form-field>    
-                        </td>    
-                        <td>    
-                            <mat-form-field class="demo-full-width">    
-                                <input matInput type="number" placeholder="Contact Number" formControlName="Contact">    
-                            </mat-form-field>    
-                        </td>    
-                    </tr>        
-                    <tr>    
-                        <td>    
-                            <mat-form-field class="demo-full-width">    
-                                <input matInput placeholder="Academic Year" formControlName="AcademicYear">    
-                            </mat-form-field>    
-                        </td>
-                        <td>    
-                          <mat-form-field class="demo-full-width">    
-                              <input matInput placeholder="Semester" formControlName="Semester">    
-                          </mat-form-field>    
-                      </td>     
-                    </tr>       
-                    <mat-form-field>
-                      <mat-label>Courses</mat-label>
-                      <mat-select formControlName="Subjects"  multiple>
-                        <mat-option *ngFor="let course of CourseList" [value]="course">{{course}}</mat-option>
-                      </mat-select>
-                    </mat-form-field>
-                    <tr>    
-                      <td colspan="2" class="content-center">    
-                        <button type="submit"  id="SubmitFormBtn" [disabled]="!StudentForm.valid" class="btn btn-danger">Submit</button>    
-                      </td>    
-                    </tr> 
-              
-                </table>    
-            </form>  
-          </div>  
-</div>
-</div> 
-  
-    </mat-card-content>    
+            <form [formGroup]="StudentForm" fxLayout="column" (ngSubmit)="onSubmit()">
+
+              <div class="input-row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="30px" fxLayoutGap.lt-md="0px">
+
+                <mat-form-field class="demo-full-width" fxFlex>
+                  <input matInput placeholder="Full Name" formControlName="FullName">
+                </mat-form-field>
+
+                <mat-form-field class="demo-full-width" fxFlex>
+                  <input matInput type="number" placeholder="Contact Number" formControlName="Contact">
+                </mat-form-field>
+              </div>
+
+              <div class="input-row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="30px" fxLayoutGap.lt-md="0px">
+
+                <mat-form-field class="demo-full-width" fxFlex>
+                  <input matInput placeholder="Academic Year" formControlName="AcademicYear">
+                </mat-form-field>
+
+                <mat-form-field class="demo-full-width" fxFlex>
+                  <input matInput placeholder="Semester" formControlName="Semester">
+                </mat-form-field>
+
+              </div>
+              <div class="input-row">
+                <mat-form-field fxFlex>
+                  <mat-label>Courses</mat-label>
+                  <mat-select formControlName="Subjects" multiple>
+                    <mat-option *ngFor="let course of CourseList" [value]="course">{{course}}</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+
+              <button type="submit" id="SubmitFormBtn" [disabled]="!StudentForm.valid"
+                class="btn btn-danger">Submit</button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+
+    </mat-card-content>
   </mat-card>
 </div>
-
 
 <div class="mrgnbtm">
   <app-students *ngIf="users.length !== 0" [users]="users"></app-students>
 </div>
-
-
